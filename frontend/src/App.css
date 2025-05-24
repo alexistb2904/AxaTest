@@ -1,0 +1,598 @@
+@font-face {
+	font-display: swap;
+	font-family: 'SourceSansPro-regular';
+	font-style: normal;
+	font-weight: 400;
+	src: url('../public/SourceSansPro-Regular.woff2') format('woff2');
+}
+
+@font-face {
+	font-display: swap;
+	font-family: 'Source Sans Pro';
+	font-style: normal;
+	font-weight: 400;
+	src: url('../public/SourceSansPro-Regular.woff2') format('woff2');
+}
+
+@font-face {
+	font-display: swap;
+	font-family: 'SourceSansPro-semibold';
+	font-style: normal;
+	font-weight: 400;
+	src: url('../public/SourceSansPro-Semibold.woff2') format('woff2');
+}
+
+@font-face {
+	font-display: swap;
+	font-family: 'Publico-Headline';
+	font-style: normal;
+	font-weight: 700;
+	src: url('../public/PublicoHeadline-Bold-Web.woff2') format('woff2');
+}
+/* AXA Colors */
+:root {
+	/* Palette Prise de https://designsystem.axa.com/docs/v1.0/foundations/colors/ */
+	--axa-blue: #00008f;
+	--axa-dark-blue: #00006d;
+	--axa-600-blue: #010143;
+	--axa-light-blue: #1f1f9c;
+	--axa-sienna: #d24723;
+	--axa-sienna-dark: #b03c1d;
+	--axa-600-sienna: #8a290e;
+	--axa-sienna-light: #d75d3d;
+	--axa-danger: #c91432;
+	--axa-danger-dark: #a50e2c;
+	--axa-dark-900: #111b1d;
+	--axa-dark-800: #343c3d;
+	--axa-dark-600: #757575;
+	--axa-dark-400: #cccccc;
+	--axa-dark-300: #e5e5e5;
+	--axa-dark-200: #f0f0f0;
+	--axa-dark-100: #fafafa;
+	--axa-white: #ffffff;
+	--axa-success-green: #138636;
+	--axa-success-green-dark: #0e6b2d;
+	--axa-warning-yellow: #ffbc11;
+	--axa-warning-yellow-dark: #e6a700;
+	--axa-info-cyan: #4976ba;
+	--axa-info-cyan-dark: #3b5a8c;
+
+	/* Shadow de https://designsystem.axa.com/docs/v1.0/foundations/shadows/ */
+	--axa-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+
+	/* Font de https://designsystem.axa.com/docs/v1.0/foundations/typography/ */
+	--font-family-primary: Source Sans Pro, sans-serif;
+	--font-family-secondary: Publico-Headline, SourceSansPro-semibold, Arial, Helvetica, Sans-Serif;
+
+	/* Spacing de https://designsystem.axa.com/docs/v1.0/foundations/spacing/ */
+	--spacing-unit: 16px;
+}
+
+body {
+	margin: 0;
+	font-family: var(--font-family-primary);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background-color: var(--axa-white);
+	color: var(--axa-dark-grey);
+	line-height: 1.6;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--font-family-secondary);
+	color: var(--axa-blue);
+	margin-top: calc(var(--spacing-unit) * 3);
+	margin-bottom: calc(var(--spacing-unit) * 2);
+}
+
+p {
+	margin-bottom: calc(var(--spacing-unit) * 2);
+}
+
+a {
+	color: var(--axa-light-blue);
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+	color: var(--axa-blue);
+}
+
+/* Toast comme le AXA Design System */
+.Toastify__toast,
+.Toastify__progress-bar--wrp {
+	border-radius: 0 !important;
+}
+
+/* Input Style depuis AXA Design System */
+
+input,
+select,
+textarea {
+	font-family: var(--font-family-primary);
+	padding: calc(var(--spacing-unit) / 2) calc(var(--spacing-unit) * 1);
+	color: var(--axa-dark-800);
+	border: 0;
+	border-radius: 0;
+	border: 1px solid var(--axa-dark-400);
+	background-color: var(--axa-white);
+	width: 100%;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+	outline: none;
+	border-color: var(--axa-blue);
+	box-shadow: 0px 0px 0px 3px rgba(0, 0, 143, 0.5);
+}
+
+input::placeholder,
+select::placeholder,
+textarea::placeholder {
+	color: var(--axa-dark-600);
+}
+
+input.error,
+select.error,
+textarea.error {
+	border-color: var(--axa-danger);
+}
+
+input.error:focus,
+select.error:focus,
+textarea.error:focus {
+	box-shadow: 0px 0px 0px 3px rgba(201, 20, 50, 0.5);
+}
+
+input:disabled,
+select:disabled {
+	border: 1px solid var(--axa-dark-400);
+	background: var(--axa-dark-200);
+}
+
+select,
+::picker(select) {
+	appearance: base-select;
+}
+
+::picker(select) {
+	border: none;
+	box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+	position-area: block-end span-inline-end;
+}
+
+select::picker-icon {
+	display: none;
+}
+
+select option::checkmark {
+	order: 1;
+	margin-left: auto;
+	content: '';
+}
+
+select option {
+	background-color: var(--axa-white);
+	color: var(--axa-dark-800);
+	display: flex;
+	justify-content: flex-start;
+	font-feature-settings: 'liga' off, 'clig' off;
+}
+
+select option:hover {
+	background-color: var(--axa-dark-100);
+	color: var(--axa-blue);
+}
+
+select option:disabled {
+	background-color: var(--axa-dark-200);
+}
+
+select option:checked {
+	font-weight: bold;
+}
+
+select option:last-of-type,
+select option:first-of-type {
+	border-radius: 0;
+}
+
+.form-group {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: calc(var(--spacing-unit) * 0.5);
+}
+
+label {
+	color: var(--axa-dark-800);
+	font-weight: 600;
+	font-feature-settings: 'liga' off, 'clig' off;
+}
+
+.field-with-icon {
+	position: relative;
+	display: flex;
+	width: 100%;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.field-with-icon svg {
+	color: var(--axa-blue);
+	height: calc(var(--spacing-unit) * 2);
+	width: calc(var(--spacing-unit) * 2);
+	margin: 0 calc(var(--spacing-unit) * 0.5);
+}
+
+.field-with-icon svg:hover {
+	cursor: pointer;
+	color: var(--axa-dark-blue);
+}
+
+.field-with-icon .help-text-field {
+	position: absolute;
+	bottom: calc(var(--spacing-unit) * 2);
+	opacity: 0;
+	right: 0;
+	background-color: var(--axa-white);
+	padding: calc(var(--spacing-unit) / 2) calc(var(--spacing-unit) * 1);
+	border-radius: var(--border-radius-small);
+	box-shadow: var(--axa-shadow);
+	z-index: 1;
+	transition: opacity 0.3s ease, bottom 0.2s ease;
+}
+
+.field-with-icon .help-text-field.visible {
+	opacity: 1;
+	bottom: calc(var(--spacing-unit) * 2.5);
+}
+
+/* Tables du Axa System Design */
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-bottom: calc(var(--spacing-unit) * 2);
+	overflow-y: auto;
+	white-space: nowrap;
+}
+
+table th,
+table td {
+	padding: calc(var(--spacing-unit) / (4 / 3)) calc(var(--spacing-unit) * 1);
+	text-align: left;
+}
+
+table td {
+	border-bottom: 1px solid var(--axa-dark-300);
+}
+
+table th {
+	padding: calc(var(--spacing-unit) * 0.75) calc(var(--spacing-unit) * 0.5) calc(var(--spacing-unit) * 0.25) calc(var(--spacing-unit) * 1);
+	font-feature-settings: 'liga' off, 'clig' off;
+	font-family: 'Source Sans Pro';
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 24px;
+	color: var(--axa-dark-600);
+	border-bottom: 1px solid var(--axa-dark-800);
+}
+
+table th.right,
+table td.right {
+	text-align: right;
+}
+
+table tr:hover td {
+	background: #e7effb;
+}
+
+.sortable-header svg {
+	margin-left: 8px;
+	color: var(--axa-dark-600);
+}
+
+/* les boutons */
+button {
+	position: relative;
+	display: inline-flex;
+	padding: 8px 12px;
+	justify-content: center;
+	align-items: center;
+	gap: 8px;
+	color: var(--axa-white);
+	border: 2px solid transparent;
+}
+
+button.s {
+	padding: 12px 16px;
+}
+
+button.m {
+	padding: 16px 24px;
+}
+
+button.l {
+	padding: 24px 32px;
+}
+
+button:focus {
+	border: 2px solid var(--axa-dark-900);
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+.button-primary {
+	background-color: var(--axa-blue);
+}
+.button-primary:hover {
+	background-color: var(--axa-dark-blue);
+}
+
+.button-primary:active {
+	background-color: var(--axa-600-blue);
+}
+
+.button-secondary {
+	background-color: var(--axa-sienna);
+}
+
+.button-secondary:hover {
+	background-color: var(--axa-sienna-dark);
+}
+
+.button-secondary:active {
+	background-color: var(--axa-600-sienna);
+}
+
+.button-danger {
+	background-color: var(--axa-danger);
+}
+.button-danger:hover,
+.button-danger:active {
+	background-color: var(--axa-danger-dark);
+}
+
+.button-warning {
+	background-color: var(--axa-warning-yellow);
+}
+
+.button-warning:hover,
+.button-warning:active {
+	background-color: var(--axa-warning-yellow-dark);
+}
+
+.button-success {
+	background-color: var(--axa-success-green);
+}
+
+.button-success:hover,
+.button-success:active {
+	background-color: var(--axa-success-green-dark);
+}
+
+.button-info {
+	background-color: var(--axa-info-cyan);
+}
+
+.button-info:hover,
+.button-info:active {
+	background-color: var(--axa-info-cyan-dark);
+}
+
+.button-outline-primary {
+	background-color: var(--axa-white);
+	border: 1px solid var(--axa-blue);
+	color: var(--axa-blue);
+}
+.button-outline-primary:hover {
+	background-color: var(--axa-blue);
+	color: var(--axa-white);
+}
+
+.button-outline-primary:active {
+	background-color: var(--axa-600-blue);
+	color: var(--axa-white);
+}
+
+.button-outline-primary:disabled {
+	border: 1px solid var(--axa-dark-200);
+	color: var(--axa-dark-200);
+}
+
+button.disabled {
+	background: var(--axa-dark-200);
+}
+
+.button-icon {
+	background: none;
+	padding: 5px;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--axa-blue);
+}
+
+.button-icon:hover {
+	opacity: 0.7;
+}
+
+.button-icon svg {
+	vertical-align: middle;
+}
+
+/* Toast Dialog */
+
+.toast-confirm-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: calc(var(--spacing-unit) * 1) 0 !important;
+	border-radius: 0 !important;
+	box-shadow: 0px 12px 16px 0px rgba(0, 0, 0, 0.2) !important;
+}
+
+.toast-warning-icon {
+	color: var(--axa-warning-yellow);
+}
+
+.toast-confirm {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+}
+
+.toast-confirm p {
+	margin: 0;
+	padding: 0 calc(var(--spacing-unit) * 1.5);
+}
+
+.toast-confirm hr {
+	width: 100%;
+	height: 1px;
+	background-color: var(--axa-dark-300);
+	border: none;
+}
+.toast-confirm-buttons {
+	display: flex;
+	justify-content: flex-end;
+	padding: 0 calc(var(--spacing-unit) * 1.5);
+	width: 100%;
+	gap: calc(var(--spacing-unit) * 2);
+}
+
+/* Navbar */
+
+.app-header {
+	border-bottom: 1px solid var(--axa-dark-400);
+	display: flex;
+	justify-content: space-between;
+	margin: 0 auto;
+	max-width: 80rem;
+	min-height: 5.7rem;
+	padding: 0.8rem 1.6rem;
+	width: 100%;
+}
+
+.header-content {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	max-width: 1600px;
+	margin: 0 auto;
+	padding: calc(var(--spacing-unit) * 0.5) 0;
+}
+
+.logo-title-container {
+	display: flex;
+	align-items: center;
+	gap: calc(var(--spacing-unit) * 1.5);
+	justify-content: space-between;
+	width: 100%;
+}
+
+.logo-title-container:hover {
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.app-logo {
+	height: 50px;
+}
+
+.app-title {
+	font-size: 1.6em;
+	color: var(--axa-blue);
+	font-weight: 600;
+	margin: 0;
+}
+
+.app-main {
+	max-width: 80rem;
+	margin: 0 auto;
+	margin-top: var(--spacing-unit);
+	margin-bottom: calc(var(--spacing-unit) * 2);
+}
+
+.App {
+	text-align: left;
+}
+
+.nav-links a {
+	color: var(--axa-dark-grey);
+	text-decoration: none;
+	padding: calc(var(--spacing-unit) * 0.5) var(--spacing-unit);
+	margin-left: var(--spacing-unit);
+	border-radius: var(--border-radius-small);
+	transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+	background-color: var(--axa-light-blue);
+	color: var(--axa-blue);
+}
+
+@media (max-width: 768px) {
+	body {
+		font-size: 14px;
+	}
+	h1 {
+		font-size: 2em;
+	}
+	h2 {
+		font-size: 1.75em;
+	}
+	h3 {
+		font-size: 1.5em;
+	}
+
+	.axa-header {
+		max-width: 136.6rem;
+		min-height: 7.5rem;
+		padding: 0.8rem 5.3rem;
+	}
+
+	.app-logo {
+		height: 60px;
+	}
+
+	.app-title {
+		font-size: 1.8em;
+	}
+}
+
+@media (max-width: 480px) {
+	body {
+		font-size: 13px;
+	}
+	.button {
+		width: 100%;
+		margin-bottom: var(--spacing-unit);
+	}
+	.button:last-child {
+		margin-bottom: 0;
+	}
+	.form-actions {
+		flex-direction: column;
+	}
+}

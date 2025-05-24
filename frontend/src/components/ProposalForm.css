@@ -1,0 +1,332 @@
+.form-actions {
+	display: flex;
+	justify-content: space-between;
+	gap: calc(var(--spacing-unit) * 2);
+	margin-top: calc(var(--spacing-unit) * 3.5);
+}
+
+/* Styles pour la page de confirmation de soumission */
+.submission-success-page {
+	text-align: center;
+	padding: calc(var(--spacing-unit) * 3) 0;
+}
+
+.submission-success-page h2 {
+	color: var(--axa-success-green);
+	font-size: 1.8em;
+	margin-bottom: var(--spacing-unit) * 2;
+}
+
+.submission-success-page p {
+	font-size: 1.1em;
+	margin-bottom: calc(var(--spacing-unit) * 3);
+	color: var(--axa-dark-grey);
+}
+
+.proposal-form-container {
+	margin: calc(var(--spacing-unit) * 2.5) auto;
+	width: 80%;
+	border-radius: var(--border-radius-medium);
+	box-shadow: var(--box-shadow-form);
+}
+
+.proposal-form-container.multi-step-form {
+	padding-bottom: calc(var(--spacing-unit) * 4);
+}
+
+.proposal-form-container h2 {
+	color: var(--axa-blue);
+	margin-bottom: calc(var(--spacing-unit) * 2.5);
+	text-align: center;
+	font-size: 1.8em;
+}
+
+.proposal-form .form-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+	gap: calc(var(--spacing-unit) * 2.5);
+}
+
+.proposal-form .form-group {
+	display: flex;
+	flex-direction: column;
+}
+
+.proposal-form .form-group.full-width {
+	grid-column: span 2;
+}
+
+.calculated-primes-section {
+	margin-top: calc(var(--spacing-unit) * 3);
+	margin-bottom: calc(var(--spacing-unit) * 2.5);
+	padding: calc(var(--spacing-unit) * 2);
+	background-color: var(--axa-light-blue-bg, #f0f8ff);
+	border-radius: var(--border-radius-medium);
+	border: 1px solid var(--axa-light-blue, #cfe2f3);
+}
+
+.calculated-primes-section h3 {
+	color: var(--axa-blue);
+	margin-top: 0;
+	margin-bottom: calc(var(--spacing-unit) * 1.5);
+	font-size: 1.3em;
+}
+
+.calculated-primes-section p {
+	margin-bottom: var(--spacing-unit);
+	font-size: 1em;
+	color: var(--axa-dark-grey);
+}
+
+.calculated-primes-section p strong {
+	color: var(--axa-blue);
+	font-weight: bold;
+}
+
+.proposal-form .form-actions {
+	display: flex;
+	justify-content: flex-start;
+	gap: var(--spacing-unit);
+	margin-top: calc(var(--spacing-unit) * 3);
+	padding-top: calc(var(--spacing-unit) * 2);
+	border-top: 1px solid var(--axa-dark-200);
+}
+
+.multi-step-form .step-indicator {
+	display: flex;
+	gap: 2%;
+	justify-content: space-around;
+	margin-bottom: calc(var(--spacing-unit) * 1.5);
+	padding-bottom: calc(var(--spacing-unit) * 1.5);
+	border-bottom: 1px solid var(--axa-dark-300);
+	padding-left: 0;
+}
+
+.multi-step-form .step-indicator span {
+	position: relative;
+	padding: var(--spacing-unit) calc(var(--spacing-unit) * 1.5);
+	color: var(--axa-medium-grey);
+	font-weight: 500;
+	cursor: default;
+	transition: color 0.3s ease, border-bottom-color 0.3s ease, font-weight 0.3s ease;
+	text-align: center;
+	flex-grow: 1;
+}
+
+.multi-step-form .step-indicator span::before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 4px;
+	width: 0%;
+	background-color: transparent;
+	transition: width 0.5s ease, background-color 0.5s ease;
+}
+
+.multi-step-form .step-indicator span.active::before {
+	width: 100%;
+	background-color: var(--axa-blue);
+	transition: width 0.5s ease, background-color 0s ease;
+}
+
+.multi-step-form .step-indicator span.active {
+	color: var(--axa-blue);
+	font-weight: bold;
+}
+
+.multi-step-form .form-step {
+	display: none;
+}
+
+.multi-step-form .form-step.active {
+	display: block;
+}
+
+.multi-step-form h3.step-title {
+	color: var(--axa-blue);
+	margin-top: 0;
+	margin-bottom: 0;
+	font-size: 1.5em;
+	text-align: left;
+	padding-bottom: var(--spacing-unit);
+}
+
+.recap-section {
+	background-color: var(--axa-background-light, #f8f9fa);
+	padding: calc(var(--spacing-unit) * 2.5);
+	border-radius: var(--border-radius-medium);
+	border: 1px solid var(--axa-border-color, #dee2e6);
+	margin-bottom: calc(var(--spacing-unit) * 3);
+}
+
+.price-typography {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-family: Publico-Headline, SourceSansPro-semibold, Arial, Helvetica, Sans-Serif;
+	font-style: normal;
+	font-weight: 700;
+	text-rendering: optimizeLegibility;
+}
+
+.recap-section h4 {
+	margin-top: 0;
+	margin-bottom: calc(var(--spacing-unit) * 2);
+	color: var(--axa-blue);
+	font-size: 1.2em;
+	border-bottom: 1px solid var(--axa-light-blue);
+	padding-bottom: var(--spacing-unit);
+}
+
+.recap-section p {
+	margin-bottom: var(--spacing-unit);
+	font-size: 1em;
+	line-height: 1.6;
+	color: var(--axa-dark-600);
+}
+
+.recap-section p strong {
+	color: var(--axa-dark-900);
+	font-weight: 600;
+}
+
+.download-buttons-container {
+	display: flex;
+	justify-content: center;
+	gap: calc(var(--spacing-unit) * 2);
+}
+
+.form-error-message {
+	color: var(--axa-danger);
+	background-color: var(--axa-white);
+	border: 1px solid var(--axa-danger-dark);
+	padding: var(--spacing-unit) * 1.5;
+	margin-bottom: calc(var(--spacing-unit) * 2);
+	text-align: center;
+}
+
+/* Styles pour la liste des suggestions d'adresses et l'indicateur de recherche */
+.address-group {
+	position: relative;
+}
+
+.address-suggestions-list {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	right: 0;
+	background-color: white;
+	border: 1px solid #ccc;
+	border-top: none;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	z-index: 1000;
+	max-height: 200px;
+	overflow-y: auto;
+}
+
+.address-suggestions-list li {
+	padding: 8px 12px;
+	cursor: pointer;
+}
+
+.address-suggestions-list li:hover {
+	background-color: #f0f0f0;
+}
+
+.address-searching {
+	font-style: italic;
+	color: #666;
+	font-size: 0.9em;
+	padding-top: 4px;
+}
+
+@media (max-width: 768px) {
+	.proposal-form .form-grid {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.proposal-form-container {
+		width: 95%;
+	}
+
+	.proposal-form-container h2 {
+		font-size: 1.5em;
+	}
+
+	.proposal-form .form-actions {
+		flex-direction: column;
+		align-items: stretch;
+		gap: 0;
+	}
+
+	.proposal-form .form-actions .button {
+		width: 100%;
+		margin-bottom: var(--spacing-unit);
+	}
+	.proposal-form .form-actions .button:last-child {
+		margin-bottom: 0;
+	}
+	.proposal-form .form-actions .button-cancel {
+		margin-right: 0;
+		margin-top: var(--spacing-unit);
+	}
+
+	.multi-step-form .step-indicator {
+		flex-direction: column;
+		align-items: stretch;
+		margin-bottom: calc(var(--spacing-unit) * 2.5);
+	}
+
+	.multi-step-form .step-indicator span {
+		padding: calc(var(--spacing-unit) * 1.25);
+		font-size: 0.95em;
+		border-bottom-width: 3px;
+		margin-bottom: var(--spacing-unit);
+		border-radius: var(--border-radius-small);
+	}
+	.multi-step-form .step-indicator span:last-child {
+		margin-bottom: 0;
+	}
+
+	.multi-step-form .step-indicator span {
+		padding: var(--spacing-unit) calc(var(--spacing-unit) * 1);
+		font-size: 0.9em;
+	}
+
+	.form-actions {
+		flex-direction: column-reverse;
+	}
+
+	.form-actions button {
+		width: 100%;
+		margin-bottom: var(--spacing-unit);
+	}
+	.form-actions button:last-child {
+		margin-bottom: 0;
+	}
+}
+
+@media (max-width: 480px) {
+	.multi-step-form .step-indicator {
+		font-size: 0.8em;
+	}
+
+	.download-buttons-container button {
+		margin-bottom: 0;
+	}
+
+	.multi-step-form .step-indicator span {
+		padding: calc(var(--spacing-unit) * 0.75) calc(var(--spacing-unit) * 0.5);
+	}
+
+	.proposal-form-container h2 {
+		font-size: 1.6em;
+	}
+
+	.multi-step-form h3.step-title {
+		font-size: 1.3em;
+	}
+}
